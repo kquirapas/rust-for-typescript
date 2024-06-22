@@ -17,6 +17,8 @@ export function idlFromFile(path: string): Result<anchor.Idl, FileLoadError> {
 
 # Table of Contents
 
+**Important Note**: Your `tsconfig.json` `target` and `lib` should be `es2022` because `class BaseError extends Error` uses the `Error.cause` metadata.
+
 ## result.ts
 
 ### Objective
