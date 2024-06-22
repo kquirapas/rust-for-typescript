@@ -2,6 +2,19 @@
 
 Adapting Rust constructs in Typescript
 
+# Usage
+
+```typescript
+export function idlFromFile(path: string): Result<anchor.Idl, FileLoadError> {
+  try {
+    const idl = JSON.parse(fs.readFileSync(path).toString()) as anchor.Idl;
+    return ok(idl);
+  } catch (e) {
+    return err(new FileLoadError(path));
+  }
+}
+```
+
 # Table of Contents
 
 ## result.ts
